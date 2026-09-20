@@ -1,0 +1,9 @@
+# robots.txt — maleficio-studio.fr
+# Autorisation totale pour tous les robots d'indexation
+
+User-agent: *
+Allow: /
+
+Sitemap: https://maleficio-studio.fr/sitemap.xml
+
+Crawl-delay: 1
