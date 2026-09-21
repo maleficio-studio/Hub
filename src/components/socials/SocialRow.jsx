@@ -23,6 +23,11 @@ export default function SocialRow({ social, index }) {
         delay: index * 0.07,
       }}
       aria-label={`${social.name} — ${social.handle}`}
+      onClick={() => {
+        window.gtag?.("event", "Réseaux", {
+          reseau: social.name,
+        });
+      }}
     >
       {/* Fond hover — z-index 0, derrière tout le texte */}
       <span className="social-row-bg" aria-hidden="true" />
@@ -34,7 +39,9 @@ export default function SocialRow({ social, index }) {
 
       <span className="social-row-handle">{social.handle}</span>
 
-      <span className="social-row-icon" aria-hidden="true">↗</span>
+      <span className="social-row-icon" aria-hidden="true">
+        ↗
+      </span>
     </motion.a>
   );
 }
