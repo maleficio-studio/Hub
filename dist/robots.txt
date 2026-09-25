@@ -3,7 +3,15 @@
 
 User-agent: *
 Allow: /
+Disallow: /assets/
 
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Sitemap
 Sitemap: https://maleficio-studio.fr/sitemap.xml
-
-Crawl-delay: 1

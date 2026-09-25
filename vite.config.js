@@ -11,9 +11,13 @@ export default defineConfig({
     rollupOptions: {
       output: {
         // Sépare motion/react du bundle principal → réduit le JS bloquant
-        manualChunks: {
-          "vendor-motion": ["motion/react"],
-          "vendor-react": ["react", "react-dom"],
+        manualChunks(id) {
+          if (id.includes("motion/react") || id.includes("motion")) {
+            return "vendor-motion";
+          }
+          if (id.includes("react-dom") || id.includes("node_modules/react/")) {
+            return "vendor-react";
+          }
         },
       },
     },
