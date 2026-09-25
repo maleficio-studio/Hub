@@ -233,7 +233,7 @@ body::before {
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--white-45); /* was --white-30: contraste insuffisant */
+  color: var(--white-60); /* contraste WCAG AA renforcé — was --white-45 */
 }
 
 .eyebrow-line {
@@ -370,7 +370,7 @@ body::before {
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--white-45); /* was --white-30: contraste insuffisant */
+  color: var(--white-60); /* contraste WCAG AA renforcé — was --white-45 */
 }
 
 .label-rule {
@@ -428,7 +428,7 @@ body::before {
 
 .social-num {
   font-size: 0.6875rem;
-  color: var(--white-45); /* was --white-30: contraste insuffisant */
+  color: var(--white-60); /* contraste WCAG AA renforcé — was --white-45 */
   font-family: var(--font-display);
   font-weight: 500;
   width: 24px;
@@ -901,7 +901,7 @@ body::before {
 
 .no-projects-sub {
   font-size: 0.8125rem;
-  color: var(--white-45); /* was --white-30: contraste insuffisant */
+  color: var(--white-60); /* contraste WCAG AA renforcé — was --white-45 */
   letter-spacing: 0.04em;
 }
 

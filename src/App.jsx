@@ -1,27 +1,26 @@
 // src/App.jsx
 import "./index.css";
-import Cursor from "./components/Cursor";
+import { lazy, Suspense } from "react";
 import Hero from "./components/Hero";
 import Socials from "./components/Socials";
 import Projects from "./components/Projects";
-import ParticleField from "./components/ui/ParticleField";
 import { motion } from "motion/react";
+
+// Composants décoratifs chargés après le rendu initial — ne bloquent pas le LCP
+const Cursor = lazy(() => import("./components/Cursor"));
+const ParticleField = lazy(() => import("./components/ui/ParticleField"));
 
 function App() {
   return (
     <>
-      {/* Custom animated cursor */}
-      <Cursor />
+      {/* Éléments décoratifs — lazy chargés pour ne pas bloquer le LCP */}
+      <Suspense fallback={null}>
+        <Cursor />
+        <ParticleField />
+      </Suspense>
 
-      {/* Particules de fond */}
-      <ParticleField />
-
-      <motion.div
-        className="hub"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4 }}
-      >
+      {/* Wrapper sans animation globale opacity:0 → évite le délai LCP de 3s */}
+      <div className="hub">
         {/* Top bar — glisse depuis le haut */}
         <motion.header
           className="top-bar"
@@ -74,7 +73,7 @@ function App() {
             Corentin Delvaque ✦
           </motion.span>
         </motion.footer>
-      </motion.div>
+      </div>
     </>
   );
 }

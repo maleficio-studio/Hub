@@ -61,23 +61,25 @@
     </noscript>
   </head>
 
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-8B4Y4V657P"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
 
-    gtag("config", "G-8B4Y4V657P");
-  </script>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Google tag (gtag.js) — chargé après le rendu initial pour ne pas bloquer le thread principal -->
+    <script>
+      window.addEventListener("load", function () {
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=G-8B4Y4V657P";
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag("js", new Date());
+        gtag("config", "G-8B4Y4V657P");
+      });
+    </script>
   </body>
 </html>
