@@ -48,9 +48,9 @@ export default function NoProjects() {
           <motion.p
             key={msgIndex}
             className="no-projects-msg"
-            initial={{ opacity: 0, y: 16, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            exit={{ opacity: 0, y: -16, filter: "blur(8px)" }}
+            initial={{ opacity: 0, y: 16, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -16, scale: 1.02 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
             {MESSAGES[msgIndex]}
